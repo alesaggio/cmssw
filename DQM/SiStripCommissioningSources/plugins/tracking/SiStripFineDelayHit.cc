@@ -42,6 +42,7 @@
 #include "DataFormats/SiStripDetId/interface/TIBDetId.h"
 #include "DataFormats/SiStripDetId/interface/TIDDetId.h"
 #include "DataFormats/SiStripDetId/interface/TOBDetId.h"
+#include "DataFormats/SiStripDetId/interface/SiStripDetId.h"
 #include "DataFormats/TrackerRecHit2D/interface/SiPixelRecHit.h"
 #include "DataFormats/TrackerRecHit2D/interface/SiStripRecHit2DCollection.h"
 #include "DataFormats/TrackerRecHit2D/interface/SiStripMatchedRecHit2DCollection.h"
@@ -61,6 +62,7 @@
 #include "DataFormats/GeometryVector/interface/GlobalVector.h"
 #include "DataFormats/GeometryVector/interface/LocalVector.h"
 #include "Geometry/TrackerGeometryBuilder/interface/TrackerGeometry.h"
+//#include "DataFormats/TrackerCommon/interface/TrackerTopology.h"
 #include "Geometry/Records/interface/TrackerDigiGeometryRecord.h"
 #include "Geometry/CommonDetUnit/interface/GeomDetType.h"
 #include "Geometry/CommonDetUnit/interface/GeomDetUnit.h"
@@ -126,7 +128,7 @@ std::pair<uint32_t, uint32_t> SiStripFineDelayHit::deviceMask(const StripSubdete
   switch(subdet){
     case (int)StripSubdetector::TIB :
     {
-      rootDetId = TIBDetId(substructure,0,0,0,0,0).rawId();
+	  rootDetId = TIBDetId(substructure,0,0,0,0,0).rawId();
       maskDetId = TIBDetId(15,0,0,0,0,0).rawId();
       break;
     }
