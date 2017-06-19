@@ -1,5 +1,3 @@
-
-
 #include "TROOT.h"
 #include "TFile.h"
 #include "TDirectory.h"
@@ -450,7 +448,7 @@ void GetAverageGain(string input, string moduleName, stLayerData& layerData )
             sprintf(LayerName,"rTEC%c%i",getTECside(tree_DetId)==1?'-':'+', getTECring(tree_DetId));
          }break;
          default:
-         break;
+            break;
       }
       layerData.LayerGain[LayerID] += tree_Gain;
       layerData.LayerGainErr[LayerID] += tree_Gain*tree_Gain;
@@ -471,7 +469,7 @@ void GetAverageGain(string input, string moduleName, stLayerData& layerData )
             sprintf(LayerName,"wTEC%c%i",getTECside(tree_DetId)==1?'-':'+', getTECwheel(tree_DetId));
          }break;
          default:
-         break;
+            break;
       }
       if(LayerID!=tree_SubDet*1000){
          layerData.LayerGain[LayerID] += tree_Gain;
